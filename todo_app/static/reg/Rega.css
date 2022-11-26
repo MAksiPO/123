@@ -1,0 +1,125 @@
+:root {
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.title {
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.form {
+  margin-top: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  min-width: 288px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.form input {
+  outline: none;
+}
+
+.form input[type=text],
+.form input[type=password]{
+  padding: 1rem;
+  padding-bottom: 0.6rem;
+  width: 100%;
+  border: none;
+  border-bottom: 3px solid #000;
+  font-family: 'Poppins';
+  transition: border 0.3s ease;
+}
+
+.form input[type=submit],
+.form button {
+  width: 60%;
+}
+
+.label {
+  position: absolute;
+  top: 1rem;
+  left: 0;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.form input:focus + .label,
+.form input:not(:placeholder-shown) + .label {
+  top: -0.2rem;
+  color: #DD4433;
+  font-size: 0.8rem;
+}
+
+.form input:focus {
+  border-bottom: 2px solid #DD4433;
+}
+
+.btn {
+  margin-top: 4%;
+  padding: 0.6rem 2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.btn:hover {
+  opacity: 0.7;
+}
+
+.btn-submit {
+  color: #FFF;
+  background-color: #DD4433;
+}
+
+.custom-checkbox {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.custom-checkbox+label {
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+}
+.custom-checkbox+label::before {
+  content: '';
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: 1px solid #adb5bd;
+  border-radius: 0.25em;
+  margin-right: 0.5em;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+}
+
+.custom-checkbox:checked+label::before {
+  border-color: #DD4433;
+  background-color: #DD4433;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+}
+

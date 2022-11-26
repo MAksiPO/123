@@ -1,0 +1,19 @@
+{% load static %}
+<head>
+  <link href="{% static 'reg/Rega.css' %}" rel="stylesheet">
+</head>
+
+<body>
+  <h1 class="title">Войти</h1>
+  
+  <form class="form" action="#" method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+    <input type="checkbox" class="custom-checkbox" id="happy" name="happy" value="yes">
+<label for="happy">Начальник отдела (admin)</label>
+    
+    <div class="form-field">
+      <input class="btn btn-submit" type="submit" value="Войти">
+    </div>
+  </form>
+</body>

@@ -1,0 +1,213 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Fast Reports</title>
+</head>
+<body>
+    <header>
+        <div class="wrap-logo">
+          <a onclick="javascript:history.back();return false;">
+            <img src="{% static 'images/full-logo-ru.png' %}" alt="">
+          </a>
+        </div>
+        <nav>
+          <a title="+7(800)551-75-80" href="tel:+7(800)551-75-80"><strong>+7(800)551-75-80</strong></a>
+          <a title="info@fastreport.ru" href="mailto:info@fastreport.ru"><strong>info@fastreport.ru</strong></a>
+
+        </nav>
+        <reg>
+            {% if request.user.is_authenticated %}
+            <a class="right"> {{user.first_name}} | <a href="{% url 'logout' %}"> Выйти </a> </a>
+            {% else %}
+          <a class="right" href="{% url 'login' %}">Вход</a>
+          <a class="right" href="{% url 'register' %}">Регистрация</a>
+            {% endif %}
+        </reg>
+      </header>
+      <div class="wrapper">
+        <input type="radio" name="point" id="slide1" checked>
+        <input type="radio" name="point" id="slide2">
+        <input type="radio" name="point" id="slide3">
+        <input type="radio" name="point" id="slide4">
+        <input type="radio" name="point" id="slide5">
+        <div class="slider">
+            <div class="slides slide1"></div>
+            <div class="slides slide2"></div>
+            <div class="slides slide3"></div>
+            <div class="slides slide4"></div>
+            <div class="slides slide5"></div>
+        </div>	
+        <div class="controls">
+            <label for="slide1"></label>
+            <label for="slide2"></label>
+            <label for="slide3"></label>
+            <label for="slide4"></label>
+            <label for="slide5"></label>
+        </div>
+    </div>
+  </div>
+
+   
+      
+<div class="card">
+  <div class="front">
+    <img src="{% static 'images/Untitled (10).png' %}" alt="">
+  </div>
+  <div class="back">
+    <div class="details">
+      <h2>Планировщик задач <br><span>Распределяй,<br> планируй,<br> действуй!</span></h2>
+      <div class="social-icons">
+        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+        <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+        <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+        <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+<div class="card2">
+  <div class="front2">
+    <img src="{% static 'images/Untitled (9).png' %}" alt="">
+  </div>
+  <div class="back2">
+    <div class="details2">
+      <h2>Система друзей <br><span>Работай вместе! <br> Управляйте своим проектом.</span></h2>
+      <div class="social-icons">
+        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+        <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+        <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+        <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+<div class="card3">
+  <div class="front3">
+    <img src="{% static 'images/Untitled (7).png' %}" alt="">
+  </div>
+  <div class="back3">
+    <div class="details3">
+      <h2>Уведомления <br><span>Знай обо всем!</span></h2>
+      <div class="social-icons">
+        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+        <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+        <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+        <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+      </div>
+        <!--<h1 class="header__title">Наши Новости</h1>
+            <div class="news_text">
+                <br>С 18 по 20 ноября в Южном университете ИУБиП проходил хакатон "HUMANHACK 2022", темой которого стала качественная разработка для отечественных решений. Участниками были школьники, увлекающиеся IT-сферой, студенты IT-специальностей и конечно же молодые специалисты в сфере IT.<br> 
+
+                <br>Участие в проекте помогло ребятам найти оплачиваемую стажировку в ведущих IT-компаниях города, а также получить приглашение на трудоустройство по завершению хакатона.<br>
+                
+                ООО "Быстрые отчеты" выступили на мероприятии в качестве спонсоров и представили собственное кейс-задание для участников. 16 команд попробовали свои силы в решении кейса от ведущего производителя программного обеспечения в сфере генерации отчетов.
+                
+                Отметим напряженную борьбу среди участников, которые 48 часов неустанно боролись за призовые места. Особенно проявили себя следующие команды: FV BB, Бензовоз.
+                
+                Дополнительно для участников был объявлен креативный конкурс на создание талисмана и слогана для нашей компании. Победительница получила ценный приз из рук Шлюпкиной Аллы, которая выступила на мероприятии в качестве ведущей.
+            </div> -->
+    </section>
+  </main>
+    <footer>
+      <td widht="230">
+        " © "
+        <strong>Быстрые отчеты</strong>
+        
+        <p>" 1998-2022 "<br>
+        " Все права защищены.<br>
+        При копировании материалов сайта, индексируемая ссылка на источник обязательна."</p>
+      </td>
+      <p><a href="https://vk.com/fastreport"><img src="{% static 'images/VK Logo.png' %}" width="30"
+        height="30" alt=""></a><a href="https://xn--80affa3aj0al.xn--80asehdb/#@Ddurnaya"><img src="{% static 'images/pngegg.png' %}" width="30"
+        height="30" alt=""></a></p>
+    </footer>
+</article>
+<script type="text/javascript">
+  "use strict";
+
+  /* Индекс слайда по умолчанию */
+  var slideIndex = 1;
+  var timer = null;
+  showSlides(slideIndex);
+
+  afterTime(20); // Устанавливаем считчик...
+  /* Функция увеличивает индекс на 1, показывает следующй слайд*/
+  function plusSlide() {
+      showSlides(slideIndex += 1);
+  }
+
+  /* Функция уменьшяет индекс на 1, показывает предыдущий слайд*/
+  function minusSlide() {
+      showSlides(slideIndex -= 1);
+  }
+
+  /* Устанавливает текущий слайд */
+  function currentSlide(n) {
+      console.log(n);
+      showSlides(slideIndex = n);
+  }
+
+  /* Основная функция сладера */
+  function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("slider");
+      var dots = document.getElementsByClassName("controls");
+
+      if (n && n > slides.length) {
+          slideIndex = 1;
+      }
+      if (n && n < 1) {
+          slideIndex = slides.length;
+      }
+
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+          dots[i].classList.remove("active");
+          // dots[i].className = dots[i].className.replace("active", "");
+      }
+      if (slideIndex > slides.length) {
+          slideIndex = 1;
+      }
+
+      if (slideIndex <= 0) slideIndex = slides.length; // проверяем на кнопке back
+
+      slides[slideIndex-1].style.display = "block";
+      dots[slideIndex-1].classList.add("active");
+      // dots[slideIndex - 1].className += " active";
+
+      afterTime(20); // Сбрасываем и устанавливаем счетчик...
+  }
+
+  function afterTime(delay) { // Сам счетчик..
+      clearInterval(timer);
+      timer = setInterval(() => {
+          slideIndex++;
+          showSlides();
+      }, delay);
+  }
+
+</script>
+  </div>
+  <script src="{% static 'scripts.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+{% extends 'todo_app/todo_main/base.html' %}
+
+{% block content %}
+    <section class="section">
+        <table class="table is-hoverable is-fullwidth">
+            <thead>
+            <tr>
+                <th>reminder_type</th>
+                <th>task_name</th>
+                <th>time_interval</th>
+                <th>notification_method</th>
+                <th>scores</th>
+            </tr>
+            </thead>
+            {% for todo in todos %}
+                <tr>
+                    <td>
+                        {{ todo.reminder_type }}
+                    </td>
+                    <td>
+                        {% if todo.status == 'закрыта' %}
+                            <span style="text-decoration: line-through">{{ todo.task_name }}</span>
+                        {% else %}
+                            {{ todo.task_name }}
+                        {% endif %}
+                    </td>
+                    <td>
+                        {{ todo.status }}
+                    </td>
+                    <td>
+                        {{ todo.notification_method }}
+                    </td>
+                    <td>
+                        {{ todo.scores }}
+                    </td>
+                    <td>
+                        Remove Task
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </section>
+{% endblock %}
