@@ -62,7 +62,7 @@ def Todo(request):
             return render(request, 'todo_app/todo_main/home.html', {'todos': todos, 'form' : form})
     else:
         todos = TodoItem.objects.all()
-        return render(request, 'todo_app/todo_main/home.html', {'todos': todos})
+        return render(request, 'todo_app/todo/index.html', {'todos': todos})
 
 def delete(request, todo_id):
     todo = TodoItem.objects.get(id=todo_id)
