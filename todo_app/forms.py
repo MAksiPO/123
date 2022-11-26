@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+from django.forms import TextInput
+
 from .models import CustomUser, TodoItem
 from django import forms
 from django.contrib.auth import get_user_model
@@ -40,19 +42,15 @@ class UserLoginForm(AuthenticationForm):
 
 
 class TodoForm(forms.ModelForm):
-    OPEN = 'открыта'
-    CLOSE = 'закрыта'
-    COMPLETED = 'завершена'
-    STATUS_CHOICE = [
-        (OPEN, 'открыта'),
-        (CLOSE, 'закрыта'),
-        (COMPLETED, 'завершена')
-    ]
-    task_name = forms.CharField(label="Название задачи",widget=forms.TextInput(
-        attrs={'class': 'field has-addons', 'placeholder': "Телефон"}))
-    status = forms.ChoiceField(label="Статус", choices=STATUS_CHOICE)
 
     class Meta:
         model = TodoItem
         fields = ['reminder_type', 'task_name', 'description',
                   'status', 'notification_method', 'scores', 'subscribers']
+
+        widgets = {
+            'task_name': TextInput(attrs={
+                'class': 'field has-addons',
+                'placeholder': 'имя задачи'
+            }),
+        }

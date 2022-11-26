@@ -25,7 +25,14 @@
                         {% endif %}
                     </td>
                     <td>
-                        {{ todo.status }}
+                        {% if todo.status == 'открыта' %}
+                            <i class="far fa-check-circle"></i>
+                            <a href="{% url 'mark_incomplete' todo.id %}">Открыта</a>
+
+                        {% else %}
+                            <i class="far fa-circle"></i>
+                            <a href="{% url 'mark_complete' todo.id %}">Закрыта</a>
+                        {% endif %}
                     </td>
                     <td>
                         {{ todo.notification_method }}

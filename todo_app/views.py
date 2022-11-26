@@ -47,7 +47,7 @@ def login_user(request):
 
 def logout_user(request):
     logout(request)
-    return redirect('login')
+    return redirect('home')
 
 def home_page(request):
     return render(request, 'todo_app/home_page/index.html', context={register: "register"})
@@ -69,3 +69,29 @@ def delete(request, todo_id):
     todo.delete()
     messages.success(request, ('Task has been Deleted!'))
     return redirect('index')
+
+def mark_complete(request, todo_id):
+    todo = TodoItem.objects.get(id=todo_id)
+    todo.status = 'открыта'
+    todo.save()
+    return redirect('index')
+
+def mark_incomplete(request, todo_id):
+    todo = TodoItem.objects.get(id=todo_id)
+    todo.status = 'закрыта'
+    todo.save()
+    return redirect('index')
+
+def mark_close(request, todo_id):
+    todo = TodoItem.objects.get(id=todo_id)
+    todo.status = 'завершена'
+    todo.save()
+    return redirect('index')
+
+def create_todo(request):
+    form = TodoForm
+
+    data = {
+        'form': form
+    }
+    return render(request, 'todo_app/todo_main/home.html', context=data)

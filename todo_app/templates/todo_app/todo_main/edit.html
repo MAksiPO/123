@@ -1,10 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Title</title>
-</head>
-<body>
+{% extends 'todo_app/todo_main/base.html' %}
 
-</body>
-</html>
+{% block content %}
+    <section class="section">
+        <form method="POST">
+            {% csrf_token %}
+            <div class="field has-addons">
+                <div class="control">
+                    <input name="task_name" class="input" type="text" placeholder="{{ todo.task_name }}" value="{{ todo.task_name }}">
+                    <input name="status" type="hidden" value="{{ todo.status }}">
+                </div>
+                <div class="control">
+                    <button type="submit" class="button is-link">Edit Todo</button>
+                </div>
+            </div>
+        </form>
+    </section>
+{% endblock %}

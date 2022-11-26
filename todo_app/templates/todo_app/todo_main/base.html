@@ -26,20 +26,22 @@
         </div>
     </div>
 </nav>
- <form class="form" action="#" method="post">
-      {% csrf_token %}
-    <div class="field has-addons" style="margin-top:50px; margin-left: 50px">
-        <div class="control">
-            <input class="input" type="text" placeholder="Добавить задачу">
+
+        <div class="navbar-end">
+            <div class="navbar-item">
+                <form method="post">
+                    <div class="field has-addons">
+                        <div class="control">
+                            {% csrf_token %}
+                            {{ form }}
+                        </div>
+                        <div class="control">
+                            <button type="submit" class="button is-link">Подтвердить</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
-        <div class="control">
-            <input class="input" type="" placeholder="Добавить задачу">
-        </div>
-        <div class="control">
-            <button type="submit" class="button is-link">Подтвердить</button>
-        </div>
-    </div>
-</form>
 {% block content %}
 
 {% endblock content %}
