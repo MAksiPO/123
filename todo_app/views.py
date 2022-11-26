@@ -63,3 +63,9 @@ def Todo(request):
     else:
         todos = TodoItem.objects.all()
         return render(request, 'todo_app/todo_main/home.html', {'todos': todos})
+
+def delete(request, todo_id):
+    todo = TodoItem.objects.get(id=todo_id)
+    todo.delete()
+    messages.success(request, ('Task has been Deleted!'))
+    return redirect('index')

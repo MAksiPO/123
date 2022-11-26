@@ -8,4 +8,5 @@ urlpatterns = [
     path('login/', login_user, name='login'),
     path('logout/', login_user, name='logout'),
     path('todo_app/', Todo, name='index'),
+    path('todo_app/delete/<int:todo_id>', views.delete, name='delete'),
 ]

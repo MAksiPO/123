@@ -34,7 +34,7 @@
                         {{ todo.scores }}
                     </td>
                     <td>
-                        Remove Task
+                        <a href="{% url 'delete' todo.id %}">Remove Task</a>
                     </td>
                 </tr>
             {% endfor %}
